@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber UXcellence Judges Page Demo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-orange: #f58233;
+            --dark-bg: #141414;
+            --darker-bg: #0a0a0a;
+            --light-text: #ffffff;
+            --secondary-text: #a0a0a0;
+            --card-bg: #1d1d1d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--light-text);
+            line-height: 1.6;
+            background-image: 
+                radial-gradient(circle at 25px 25px, rgba(255, 255, 255, 0.01) 2px, transparent 0),
+                radial-gradient(circle at 75px 75px, rgba(255, 255, 255, 0.01) 2px, transparent 0);
+            background-size: 100px 100px;
+        }
+        
+        header {
+            background-color: var(--darker-bg);
+            padding: 60px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.2;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23f58233' fill-opacity='0.2'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        
+        .logo {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--light-text);
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .logo span {
+            color: var(--primary-orange);
+        }
+        
+        header p {
+            max-width: 800px;
+            margin: 0 auto;
+            color: rgba(255, 255, 255, 0.8);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            color: var(--primary-orange);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .intro {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .intro p {
+            max-width: 800px;
+            margin: 0 auto 20px;
+            color: var(--secondary-text);
+        }
+        
+        .designs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .design-card {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .design-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .design-preview {
+            width: 100%;
+            height: 220px;
+            background-color: #1f1f1f;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .design-preview img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .design-card:hover .design-preview img {
+            transform: scale(1.05);
+        }
+        
+        .design-info {
+            padding: 25px;
+        }
+        
+        .design-name {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--light-text);
+        }
+        
+        .design-description {
+            color: var(--secondary-text);
+            margin-bottom: 25px;
+        }
+        
+        .design-link {
+            display: inline-block;
+            background-color: var(--primary-orange);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+        
+        .design-link:hover {
+            background-color: #ca442a;
+        }
+        
+        footer {
+            background-color: var(--darker-bg);
+            padding: 30px 20px;
+            text-align: center;
+            color: var(--secondary-text);
+            font-size: 0.9rem;
+        }
+        
+        footer a {
+            color: var(--primary-orange);
+            text-decoration: none;
+        }
+        
+        footer a:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .designs-grid {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .logo {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-bg"></div>
+        <div class="logo">CYBER <span>UX</span>CELLENCE AWARDS</div>
+        <p>Judges Page Design Demonstration</p>
+    </header>
+    
+    <div class="container">
+        <div class="intro">
+            <h1>Judges Page Design Options</h1>
+            <p>Explore seven different design approaches for the Cyber UXcellence Awards judges page. Each version showcases our distinguished panel of cybersecurity and UX experts in a unique layout while maintaining brand consistency.</p>
+            <p>Click on any design to view the full page.</p>
+        </div>
+        
+        <div class="designs-grid">
+            <!-- Design 1 -->
+            <div class="design-card">
+                <div class="design-preview">
+                    <img src="images/preview-version1.jpg" alt="Grid Layout Design">
+                </div>
+                <div class="design-info">
+                    <h3 class="design-name">Version 1: Grid Layout</h3>
+                    <p class="design-description">A clean, professional grid-based layout that showcases all judges equally with card-based design.</p>
+                    <a href="version1.html" class="design-link">View Design</a>
+                </div>
+            </div>
+            
+            <!-- Design 2 -->
+            <div class="design-card">
+                <div class="design-preview">
+                    <img src="images/preview-version2.jpg" alt="Interactive Cards Design">
+                </div>
+                <div class="design-info">
+                    <h3 class="design-name">Version 2: Interactive Cards</h3>
+                    <p class="design-description">Dynamic, engaging experience with flip cards that reveal more information on hover.</p>
+                    <a href="version2.html" class="design-link">View Design</a>
+                </div>
+            </div>
+            
+            <!-- Design 3 -->
+            <div class="design-card">
+                <div class="design-preview">
+                    <img src="images/preview-version3.jpg" alt="Modern Timeline Design">
+                </div>
+                <div class="design-info">
+                    <h3 class="design-name">Version 3: Modern Timeline</h3>
+                    <p class="design-description">Visually interesting timeline layout that tells a story about each judge with alternating positioning.</p>
+                    <a href="version3.html" class="design-link">View Design</a>
+                </div>
+            </div>
+            
+            <!-- Design 4 -->
+            <div class="design-card">
+                <div class="design-preview">
+                    <img src="images/preview-version4.jpg" alt="Brand-Aligned Cards Design">
+                </div>
+                <div class="design-info">
+                    <h3 class="design-name">Version 4: Brand-Aligned Cards</h3>
+                    <p class="design-description">Custom cards with styling that closely matches the Cyber UXcellence brand colors and aesthetic.</p>
+                    <a href="version4.html" class="design-link">View Design</a>
+                </div>
+            </div>
+            
+            <!-- Design 5 -->
+            <div class="design-card">
+                <div class="design-preview">
+                    <img src="images/preview-version5.jpg" alt="Hexagonal Grid Design">
+                </div>
+                <div class="design-info">
+                    <h3 class="design-name">Version 5: Hexagonal Grid</h3>
+                    <p class="design-description">Innovative hexagonal layout with interactive modals for detailed judge information.</p>
+                    <a href="version5.html" class="design-link">View Design</a>
+                </div>
+            </div>
+            
+            <!-- Design 6 -->
+            <div class="design-card">
+                <div class="design-preview">
+                    <img src="images/preview-version6.jpg" alt="Official Brand Colors Design">
+                </div>
+                <div class="design-info">
+                    <h3 class="design-name">Version 6: Official Brand Colors</h3>
+                    <p class="design-description">A modern card layout using the actual judges' information and official Cyber UXcellence brand colors.</p>
+                    <a href="version6.html" class="design-link">View Design</a>
+                </div>
+            </div>
+            
+            <!-- Design 7 -->
+            <div class="design-card">
+                <div class="design-preview">
+                    <img src="images/preview-version7.jpg" alt="Spotlight Carousel Design">
+                </div>
+                <div class="design-info">
+                    <h3 class="design-name">Version 7: Spotlight Carousel</h3>
+                    <p class="design-description">A dynamic carousel showcasing judges with thumbnails below for quick navigation.</p>
+                    <a href="version7.html" class="design-link">View Design</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>Designed for <a href="https://www.cyberuxcellence.com" target="_blank">Cyber UXcellence Awards</a> | &copy; 2025</p>
+    </footer>
+</body>
+</html>

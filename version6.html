@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber UXcellence Awards - Judges</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-orange: #f58233;
+            --primary-dark: #141414;
+            --secondary-dark: #1d1d1d;
+            --light-text: #ffffff;
+            --secondary-text: #a0a0a0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--primary-dark);
+            color: var(--light-text);
+            line-height: 1.6;
+            background-image: 
+                radial-gradient(circle at 25px 25px, rgba(255, 255, 255, 0.03) 2px, transparent 0),
+                radial-gradient(circle at 75px 75px, rgba(255, 255, 255, 0.03) 2px, transparent 0);
+            background-size: 100px 100px;
+        }
+        
+        .header {
+            background-color: var(--primary-orange);
+            padding: 80px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 25px 25px, rgba(0, 0, 0, 0.1) 2px, transparent 0),
+                radial-gradient(circle at 75px 75px, rgba(0, 0, 0, 0.1) 2px, transparent 0);
+            background-size: 100px 100px;
+            opacity: 0.3;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .header h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--primary-dark);
+        }
+        
+        .header p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            color: rgba(0, 0, 0, 0.8);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+        
+        .intro {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .intro h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--primary-orange);
+        }
+        
+        .intro p {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto;
+            color: var(--secondary-text);
+        }
+        
+        .judges-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .judge-card {
+            background-color: var(--secondary-dark);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .judge-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+        }
+        
+        .judge-photo {
+            height: 220px;
+            position: relative;
+            background-color: rgba(245, 130, 51, 0.05);
+            overflow: hidden;
+        }
+        
+        .judge-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .judge-card:hover .judge-photo img {
+            transform: scale(1.05);
+        }
+        
+        .judge-info {
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+        
+        .judge-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+            color: var(--light-text);
+        }
+        
+        .judge-title {
+            font-size: 1rem;
+            font-weight: 500;
+            margin-bottom: 5px;
+            color: var(--primary-orange);
+        }
+        
+        .judge-company {
+            font-size: 0.9rem;
+            color: var(--secondary-text);
+            margin-bottom: 20px;
+        }
+        
+        .judge-bio {
+            color: var(--secondary-text);
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+        
+        .judge-link {
+            display: inline-block;
+            padding: 8px 20px;
+            background-color: rgba(245, 130, 51, 0.1);
+            color: var(--primary-orange);
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 500;
+            transition: background-color 0.3s;
+            margin-top: auto;
+            text-align: center;
+            border: 1px solid rgba(245, 130, 51, 0.2);
+        }
+        
+        .judge-link:hover {
+            background-color: rgba(245, 130, 51, 0.2);
+        }
+        
+        .back-to-home {
+            display: inline-block;
+            margin-top: 40px;
+            padding: 12px 25px;
+            background-color: var(--primary-orange);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+        
+        .back-to-home:hover {
+            background-color: #e04718;
+        }
+        
+        @media (max-width: 768px) {
+            .judges-grid {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            }
+            
+            .header h1 {
+                font-size: 2.8rem;
+            }
+            
+            .intro h2 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-pattern"></div>
+        <div class="header-content">
+            <h1>Meet the Judges</h1>
+            <p>Our distinguished panel brings together leaders in cybersecurity and user experience who understand the critical intersection of security and usability.</p>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="intro">
+            <h2>Industry Leading Panel</h2>
+            <p>Our judges include top industry CISOs, UX experts, and cybersecurity thought leaders who will evaluate products based on both security excellence and outstanding user experience.</p>
+        </div>
+        
+        <div class="judges-grid">
+            <!-- Ron Gula -->
+            <div class="judge-card">
+                <div class="judge-photo">
+                    <img src="images/judges/ron-gula.jpg" alt="Ron Gula">
+                </div>
+                <div class="judge-info">
+                    <h3 class="judge-name">Ron Gula</h3>
+                    <p class="judge-title">President and Co-Founder Gula Tech Adventures<br>Co-Founder Tenable Networks</p>
+                    <p class="judge-company">Gula Tech Adventures</p>
+                    <div class="judge-bio">
+                        <p>Since 2017, Ron has been a key figure in cybersecurity, investing in start-ups and supporting nonprofits. He mentors founders on GTA's portfolio boards and contributes to key initiatives. From 2002-2016, Ron co-founded and led Tenable Network Security as CEO, growing it to 20,000 customers, $100M in revenue, and securing $300M in funding, culminating in a $3B IPO in 2018. A cyber pioneer, Ron developed Dragon, an early commercial IDS, and served as a penetration tester at the NSA, also deploying honeypots for the U.S. Defense Department in the 1990s.</p>
+                    </div>
+                    <a href="#" class="judge-link">Full Profile</a>
+                </div>
+            </div>
+            
+            <!-- Troy Wilkinson -->
+            <div class="judge-card">
+                <div class="judge-photo">
+                    <img src="images/judges/troy-wilkinson.jpg" alt="Troy Wilkinson">
+                </div>
+                <div class="judge-info">
+                    <h3 class="judge-name">Troy Wilkinson</h3>
+                    <p class="judge-title">Global F500 CISO, Former CISO</p>
+                    <p class="judge-company">Global F500 CISO, Former CISO</p>
+                    <div class="judge-bio">
+                        <p>Troy Wilkinson started his career as a law enforcement officer, leading a Joint Terrorism Task Force and specializing in cyber and child exploitation crimes. He trained police in Kosovo on cyber investigations and worked with the UN and EU on political corruption and terrorism cases. As former Global CISO at Interpublic Group and CISO at International Cruise & Excursions, he co-founded Tego Cyber Inc. and serves on its Board. A global speaker, co-author of an Amazon Best Seller, and advisor to VCs and cybersecurity startups, he also contributes to national publications and conferences.</p>
+                    </div>
+                    <a href="#" class="judge-link">Full Profile</a>
+                </div>
+            </div>
+            
+            <!-- Malcolm Harkins -->
+            <div class="judge-card">
+                <div class="judge-photo">
+                    <img src="images/judges/malcolm-harkins.jpg" alt="Malcolm Harkins">
+                </div>
+                <div class="judge-info">
+                    <h3 class="judge-name">Malcolm Harkins</h3>
+                    <p class="judge-title">Chief Security & Trust Officer, Hidden Layer<br>Former CISO Intel</p>
+                    <p class="judge-company">Hidden Layer</p>
+                    <div class="judge-bio">
+                        <p>Malcolm Harkins is Chief Security and Trust Officer at HiddenLayer with over 20 years in info security. He's held leadership roles at Intel, Cylance, and others, and authored books on risk management and security. Harkins has received awards from RSA, ISC2, and more. He's testified before the FTC and U.S. Senate and is a Fellow at the Institute for Critical Infrastructure Technology, advising Congress and federal agencies. Harkins holds a B.A. in economics from UC Irvine and an MBA from UC Davis and has taught at UCLA and Susquehanna University.</p>
+                    </div>
+                    <a href="#" class="judge-link">Full Profile</a>
+                </div>
+            </div>
+            
+            <!-- Rinki Sethi -->
+            <div class="judge-card">
+                <div class="judge-photo">
+                    <img src="images/judges/rinki-sethi.jpg" alt="Rinki Sethi">
+                </div>
+                <div class="judge-info">
+                    <h3 class="judge-name">Rinki Sethi</h3>
+                    <p class="judge-title">VP & CISO</p>
+                    <p class="judge-company"></p>
+                    <div class="judge-bio">
+                        <p>Rinki Sethi is a cybersecurity leader with executive experience at companies like BILL, Twitter, Rubrik, IBM, Palo Alto Networks, Intuit, and eBay. She currently serves on the board of Vaultree, and previously served on the boards of Women in CyberSecurity, One Prosper and ForgeRock. Rinki advises cybersecurity startups and is an active angel investor. She is also a frequent contributor to major publications like Fortune, Forbes, and WSJ and a keynote speaker at global conferences.</p>
+                    </div>
+                    <a href="#" class="judge-link">Full Profile</a>
+                </div>
+            </div>
+            
+            <!-- Damian Chung -->
+            <div class="judge-card">
+                <div class="judge-photo">
+                    <img src="images/judges/damian-chung.jpg" alt="Damian Chung">
+                </div>
+                <div class="judge-info">
+                    <h3 class="judge-name">Damian Chung</h3>
+                    <p class="judge-title">Business Information Security Officer</p>
+                    <p class="judge-company">Netscope</p>
+                    <div class="judge-bio">
+                        <p>Damian Chung is a cybersecurity leader with 25+ years of experience. As VP of Cyber Defense at Netskope, he oversees global SOC, Threat/Vulnerability Management, and Operational Threat Intelligence. He leads the Netskope Customer Zero program and is focused on AI integrations to enhance security response and reduce risk. Previously, Damian led Cybersecurity Engineering/Architecture at Dignity Health, developing a healthcare security roadmap. He also served as VP of IT, Cloud Security & Compliance for a healthcare tech company, building HIPAA-compliant cloud services. Damian holds an MSc from Arizona State University.</p>
+                    </div>
+                    <a href="#" class="judge-link">Full Profile</a>
+                </div>
+            </div>
+            
+            <!-- Nick Shevelyov -->
+            <div class="judge-card">
+                <div class="judge-photo">
+                    <img src="images/judges/nick-shevelyov.jpg" alt="Nick Shevelyov">
+                </div>
+                <div class="judge-info">
+                    <h3 class="judge-name">Nick Shevelyov</h3>
+                    <p class="judge-title">CEO & Managing Partner vCSO,<br>Former CISO Silicon Valley Bank</p>
+                    <p class="judge-company">vCSO</p>
+                    <div class="judge-bio">
+                        <p>Nick Shevelyov is the founder of vCSO.ai, a cybersecurity executive, advisor, and author. With experience as CSO, CPO, CIO, and CISO, he's helped companies like Silicon Valley Bank grow globally. A sought-after public speaker, Nick has advised on the development of next-gen tech companies and supported firms like StackRox, Kodem, and Bedrock Security. He works with PE firms and sits on advisory boards of major capital firms. Author of 'Cyber War…and Peace,' Nick blends history and behavioral science into cybersecurity strategy.</p>
+                    </div>
+                    <a href="#" class="judge-link">Full Profile</a>
+                </div>
+            </div>
+            
+            <!-- Patricia Titus -->
+            <div class="judge-card">
+                <div class="judge-photo">
+                    <img src="images/judges/patricia-titus.jpg" alt="Patricia Titus">
+                </div>
+                <div class="judge-info">
+                    <h3 class="judge-name">Patricia Titus</h3>
+                    <p class="judge-title">Field CISO</p>
+                    <p class="judge-company">Abnormal AI</p>
+                    <div class="judge-bio">
+                        <p>Patricia Titus is a seasoned cybersecurity executive and current Field CISO at Abnormal AI. She has led security initiatives at top organizations including DHS, Freddie Mac, Symantec, and Booking Holdings. With expertise in risk management, digital transformation, and AI-driven security, Patricia aligns cybersecurity with business strategy and regulatory compliance. She is known for transforming security organizations and enhancing business resilience. Patricia also serves on several boards, including Black Kite, The Girl Scouts of the Commonwealth of Virginia, and Glasswing Ventures.</p>
+                    </div>
+                    <a href="#" class="judge-link">Full Profile</a>
+                </div>
+            </div>
+            
+            <!-- Michael Baker -->
+            <div class="judge-card">
+                <div class="judge-photo">
+                    <img src="images/judges/michael-baker.jpg" alt="Michael Baker">
+                </div>
+                <div class="judge-info">
+                    <h3 class="judge-name">Michael Baker</h3>
+                    <p class="judge-title">CISO</p>
+                    <p class="judge-company">DXC Technology</p>
+                    <div class="judge-bio">
+                        <p>Michael Baker is the Global CISO for DXC Technology, overseeing cyber risk management for the $14B enterprise with 130,000 employees. With over 24 years of experience, he has held leadership roles in government contracting, aerospace, and defense, as well as consulting. Known for his strategic vision and expertise in risk management, zero-trust architecture, and incident response, Michael drives operational excellence in cybersecurity. He is the current chair of the CapitalCISO Council and was a finalist for the 2024 Capital CISO of the Year Award, having won CISO of the Year in 2022.</p>
+                    </div>
+                    <a href="#" class="judge-link">Full Profile</a>
+                </div>
+            </div>
+            
+            <!-- Peter Kilpe -->
+            <div class="judge-card">
+                <div class="judge-photo">
+                    <img src="images/judges/peter-kilpe.jpg" alt="Peter Kilpe">
+                </div>
+                <div class="judge-info">
+                    <h3 class="judge-name">Peter Kilpe</h3>
+                    <p class="judge-title">CEO</p>
+                    <p class="judge-company">N2K Networks</p>
+                    <div class="judge-bio">
+                        <p>Peter Kilpe is the founder and CEO of N2K Networks, a hub for news, insights, experts, and learning in the cybersecurity industry. Under his leadership, N2K CyberWire has become the premier B2B podcast network, providing intelligence and insights to leaders, builders, and decision-makers across the public and private sectors. N2K Certify is a global leader in performance-driven learning, offering certification practice tests and study tools to the world's largest training platforms.</p>
+                    </div>
+                    <a href="#" class="judge-link">Full Profile</a>
+                </div>
+            </div>
+            
+            <!-- Alicia Lynch -->
+            <div class="judge-card">
+                <div class="judge-photo">
+                    <img src="images/judges/alicia-lynch.jpg" alt="Alicia Lynch">
+                </div>
+                <div class="judge-info">
+                    <h3 class="judge-name">Alicia Lynch</h3>
+                    <p class="judge-title">CISO</p>
+                    <p class="judge-company">TD SYNNEX</p>
+                    <div class="judge-bio">
+                        <p>Alicia Lynch, a retired U.S. Army Colonel, has 30+ years in intelligence, security, and cyber operations. She's held executive roles including CISO at TD SYNNEX, SVP Chief Security Officer at Cognizant, and CISO at SAIC. Alicia is an active contributor to industry groups, serving on the Northern Virginia Technology Council's Cybersecurity & Privacy Committee and the National Security Institute's Advisory Board. She holds an MBA from the University of Maryland, a CIO Program Certificate from NDU, and certifications in CISSP and CIPP, recognizing her expertise in cybersecurity and privacy.</p>
+                    </div>
+                    <a href="#" class="judge-link">Full Profile</a>
+                </div>
+            </div>
+            
+            <!-- Meagan Petri -->
+            <div class="judge-card">
+                <div class="judge-photo">
+                    <img src="images/judges/meagan-petri.jpg" alt="Meagan Petri">
+                </div>
+                <div class="judge-info">
+                    <h3 class="judge-name">Meagan Petri</h3>
+                    <p class="judge-title">Director, Creative & Design</p>
+                    <p class="judge-company">Mindgrub Technologies</p>
+                    <div class="judge-bio">
+                        <p>As Director of Creative & Design at Mindgrub, Meagan has 19+ years of experience creating award-winning apps, websites, and campaigns for clients ranging from non-profits to cybersecurity. She leads a team of designers, content strategists, and UX/UI professionals to deliver innovative solutions. Past clients include Dragos, NASA Space Apps, Kleenex, Marriott, Under Armour, and more. Meagan holds a BA in Graphic Design from the University of Maryland, Baltimore County and has taught UX/UI design as an adjunct professor.</p>
+                    </div>
+                    <a href="#" class="judge-link">Full Profile</a>
+                </div>
+            </div>
+        </div>
+        
+        <div style="text-align: center;">
+            <a href="index.html" class="back-to-home">Back to Design Options</a>
+        </div>
+    </div>
+</body>
+</html>
