@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber UXcellence Awards - Judges Panel</title>
+    <style>
+        /* Main Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #0a1128;
+            color: #e9ecef;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #00b4d8, #90e0ef);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            margin-bottom: 4rem;
+            color: #adb5bd;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Judges Section */
+        .judges-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+        }
+        
+        .judge-card {
+            position: relative;
+            width: 320px;
+            height: 400px;
+            perspective: 1000px;
+        }
+        
+        .card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+        }
+        
+        .judge-card:hover .card-inner {
+            transform: rotateY(180deg);
+        }
+        
+        .card-front, .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        
+        .card-front {
+            background-color: #1a2a44;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .card-back {
+            background-color: #1a2a44;
+            transform: rotateY(180deg);
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .judge-image {
+            width: 100%;
+            height: 70%;
+            object-fit: cover;
+        }
+        
+        .judge-brief {
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .judge-name {
+            font-size: 1.5rem;
+            margin: 0 0 5px 0;
+            color: #caf0f8;
+        }
+        
+        .judge-title {
+            font-size: 0.95rem;
+            color: #90e0ef;
+            margin: 0;
+        }
+        
+        .judge-bio {
+            font-size: 0.95rem;
+            color: #e9ecef;
+            line-height: 1.6;
+        }
+        
+        .expertise {
+            margin-top: 20px;
+        }
+        
+        .expertise-title {
+            font-size: 1rem;
+            color: #90e0ef;
+            margin-bottom: 8px;
+        }
+        
+        .expertise-tag {
+            display: inline-block;
+            background-color: #104677;
+            color: #e9ecef;
+            padding: 4px 10px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            margin: 0 5px 5px 0;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .judge-card {
+                width: 280px;
+                height: 380px;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Expert Judges Panel</h1>
+        <p class="subtitle">Hover over each card to learn more about our distinguished panel of judges who represent the intersection of cybersecurity expertise and user experience excellence.</p>
+        
+        <div class="judges-container">
+            <!-- Judge 1 -->
+            <div class="judge-card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="/api/placeholder/400/300" alt="Rinki Sethi" class="judge-image">
+                        <div class="judge-brief">
+                            <h3 class="judge-name">Rinki Sethi</h3>
+                            <p class="judge-title">VP & CISO at Fortune 500 Tech Company</p>
+                        </div>
+                    </div>
+                    <div class="card-back">
+                        <h3 class="judge-name">Rinki Sethi</h3>
+                        <p class="judge-bio">Rinki brings over two decades of information security leadership to our panel. Her innovative approaches to security have consistently prioritized strong user experiences while maintaining enterprise-grade protection.</p>
+                        <div class="expertise">
+                            <p class="expertise-title">Areas of Expertise:</p>
+                            <span class="expertise-tag">Enterprise Security</span>
+                            <span class="expertise-tag">Security Leadership</span>
+                            <span class="expertise-tag">Risk Management</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Judge 2 -->
+            <div class="judge-card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="/api/placeholder/400/300" alt="Damian Hehir" class="judge-image">
+                        <div class="judge-brief">
+                            <h3 class="judge-name">Damian Hehir</h3>
+                            <p class="judge-title">Director of Product Design, Cybersecurity Solutions</p>
+                        </div>
+                    </div>
+                    <div class="card-back">
+                        <h3 class="judge-name">Damian Hehir</h3>
+                        <p class="judge-bio">Damian specializes in transforming complex security functionality into intuitive user experiences. His design philosophy centers on creating security products that users love to interact with rather than avoid.</p>
+                        <div class="expertise">
+                            <p class="expertise-title">Areas of Expertise:</p>
+                            <span class="expertise-tag">UX Design</span>
+                            <span class="expertise-tag">Product Design</span>
+                            <span class="expertise-tag">User Research</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Judge 3 -->
+            <div class="judge-card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="/api/placeholder/400/300" alt="Nick Selby" class="judge-image">
+                        <div class="judge-brief">
+                            <h3 class="judge-name">Nick Selby</h3>
+                            <p class="judge-title">Chief Security Officer, Financial Services</p>
+                        </div>
+                    </div>
+                    <div class="card-back">
+                        <h3 class="judge-name">Nick Selby</h3>
+                        <p class="judge-bio">Nick has led security transformations in highly regulated industries where ease of use directly impacts compliance. His practical approach balances stringent security requirements with the need for frictionless user experiences.</p>
+                        <div class="expertise">
+                            <p class="expertise-title">Areas of Expertise:</p>
+                            <span class="expertise-tag">Financial Security</span>
+                            <span class="expertise-tag">Compliance</span>
+                            <span class="expertise-tag">Security Operations</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Judge 4 -->
+            <div class="judge-card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="/api/placeholder/400/300" alt="Patricia Morrison" class="judge-image">
+                        <div class="judge-brief">
+                            <h3 class="judge-name">Patricia Morrison</h3>
+                            <p class="judge-title">Principal UX Researcher, Security Products</p>
+                        </div>
+                    </div>
+                    <div class="card-back">
+                        <h3 class="judge-name">Patricia Morrison</h3>
+                        <p class="judge-bio">Patricia's research has redefined how we understand user behavior in security contexts. Her methods have helped countless organizations create security solutions that work with human psychology rather than against it.</p>
+                        <div class="expertise">
+                            <p class="expertise-title">Areas of Expertise:</p>
+                            <span class="expertise-tag">UX Research</span>
+                            <span class="expertise-tag">Usability Testing</span>
+                            <span class="expertise-tag">Behavioral Security</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Judge 5 -->
+            <div class="judge-card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="/api/placeholder/400/300" alt="Michael Chen" class="judge-image">
+                        <div class="judge-brief">
+                            <h3 class="judge-name">Michael Chen</h3>
+                            <p class="judge-title">Cybersecurity Strategist & Industry Analyst</p>
+                        </div>
+                    </div>
+                    <div class="card-back">
+                        <h3 class="judge-name">Michael Chen</h3>
+                        <p class="judge-bio">Michael analyzes how user experience impacts security outcomes across industries. His thought leadership has highlighted the critical connection between adoption rates of security tools and their effectiveness in protecting organizations.</p>
+                        <div class="expertise">
+                            <p class="expertise-title">Areas of Expertise:</p>
+                            <span class="expertise-tag">Market Analysis</span>
+                            <span class="expertise-tag">Security Trends</span>
+                            <span class="expertise-tag">Strategic Advisory</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Judge 6 -->
+            <div class="judge-card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="/api/placeholder/400/300" alt="Peter Kilpe" class="judge-image">
+                        <div class="judge-brief">
+                            <h3 class="judge-name">Peter Kilpe</h3>
+                            <p class="judge-title">CEO, N2K Networks & Former UX Designer</p>
+                        </div>
+                    </div>
+                    <div class="card-back">
+                        <h3 class="judge-name">Peter Kilpe</h3>
+                        <p class="judge-bio">Peter combines executive leadership with hands-on UX design experience. His career spans from designing security interfaces to leading companies that put user experience at the core of their security strategy.</p>
+                        <div class="expertise">
+                            <p class="expertise-title">Areas of Expertise:</p>
+                            <span class="expertise-tag">Executive Leadership</span>
+                            <span class="expertise-tag">UX Strategy</span>
+                            <span class="expertise-tag">Business Growth</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Judge 7 -->
+            <div class="judge-card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="/api/placeholder/400/300" alt="Alicia Washington" class="judge-image">
+                        <div class="judge-brief">
+                            <h3 class="judge-name">Alicia Washington</h3>
+                            <p class="judge-title">VP of Product, Enterprise Security Solutions</p>
+                        </div>
+                    </div>
+                    <div class="card-back">
+                        <h3 class="judge-name">Alicia Washington</h3>
+                        <p class="judge-bio">Alicia has pioneered product strategies that place user experience at the center of security innovation. Her leadership has resulted in security products that achieve both high protection standards and exceptional user satisfaction.</p>
+                        <div class="expertise">
+                            <p class="expertise-title">Areas of Expertise:</p>
+                            <span class="expertise-tag">Product Strategy</span>
+                            <span class="expertise-tag">Enterprise Security</span>
+                            <span class="expertise-tag">UX Optimization</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Judge 8 -->
+            <div class="judge-card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="/api/placeholder/400/300" alt="Meagan Torres" class="judge-image">
+                        <div class="judge-brief">
+                            <h3 class="judge-name">Meagan Torres</h3>
+                            <p class="judge-title">UI/UX Director, Cybersecurity Innovations</p>
+                        </div>
+                    </div>
+                    <div class="card-back">
+                        <h3 class="judge-name">Meagan Torres</h3>
+                        <p class="judge-bio">Meagan's design leadership has transformed how security companies approach user interfaces. Her work demonstrates that beautiful, intuitive design and robust security can coexist and even enhance each other.</p>
+                        <div class="expertise">
+                            <p class="expertise-title">Areas of Expertise:</p>
+                            <span class="expertise-tag">UI Design</span>
+                            <span class="expertise-tag">Design Systems</span>
+                            <span class="expertise-tag">Interactive Prototyping</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
