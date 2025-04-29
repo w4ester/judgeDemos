@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber UXcellence Judges Page Preview</title>
+    <style>
+        body {
+            font-family: 'Inter', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #141414;
+            color: #fff;
+        }
+        
+        .header {
+            background-color: #f58233;
+            padding: 20px;
+            text-align: center;
+            color: #000;
+        }
+        
+        .header h1 {
+            margin: 0;
+        }
+        
+        .preview-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .preview-frame {
+            width: 100%;
+            max-width: 1200px;
+            height: 800px;
+            margin-bottom: 30px;
+            border: 2px solid #f58233;
+            border-radius: 5px;
+        }
+        
+        .controls {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .control-button {
+            padding: 10px 20px;
+            background-color: #f58233;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        
+        .control-button:hover {
+            background-color: #e04718;
+        }
+        
+        .info {
+            max-width: 800px;
+            margin: 20px auto;
+            text-align: center;
+            color: #a0a0a0;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Cyber UXcellence Judges Page Preview</h1>
+    </div>
+    
+    <div class="preview-container">
+        <div class="info">
+            <p>Use the controls below to switch between different design versions.</p>
+        </div>
+        
+        <div class="controls">
+            <button class="control-button" onclick="changeVersion('index')">Home</button>
+            <button class="control-button" onclick="changeVersion('version1')">Version 1</button>
+            <button class="control-button" onclick="changeVersion('version2')">Version 2</button>
+            <button class="control-button" onclick="changeVersion('version3')">Version 3</button>
+            <button class="control-button" onclick="changeVersion('version4')">Version 4</button>
+            <button class="control-button" onclick="changeVersion('version5')">Version 5</button>
+            <button class="control-button" onclick="changeVersion('version6')">Version 6</button>
+            <button class="control-button" onclick="changeVersion('version7')">Version 7</button>
+        </div>
+        
+        <iframe class="preview-frame" id="previewFrame" src="index.html"></iframe>
+        
+        <div class="info">
+            <p>This preview tool helps you quickly compare all design options without leaving the page.</p>
+            <p>For the best experience, click the "Home" button to return to the main page and then open each version in a new tab.</p>
+        </div>
+    </div>
+    
+    <script>
+        function changeVersion(version) {
+            document.getElementById('previewFrame').src = version + '.html';
+        }
+    </script>
+</body>
+</html>

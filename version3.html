@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber UXcellence Awards - Meet the Judges</title>
+    <style>
+        /* Main Styles */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f7fa;
+            color: #2c3e50;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        h1 {
+            font-size: 3.2rem;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+            position: relative;
+            display: inline-block;
+        }
+        
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #3498db, #2ecc71);
+            border-radius: 2px;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 20px;
+            color: #7f8c8d;
+        }
+        
+        /* Judges Timeline */
+        .judges-timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .timeline-line {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 4px;
+            background: linear-gradient(to bottom, #3498db, #2ecc71);
+            transform: translateX(-50%);
+        }
+        
+        .judge-item {
+            display: flex;
+            justify-content: flex-start;
+            padding-bottom: 60px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .judge-item:nth-child(even) {
+            justify-content: flex-end;
+        }
+        
+        .judge-content {
+            position: relative;
+            width: 45%;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .judge-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+        
+        .judge-item:nth-child(odd) .judge-content::after {
+            content: '';
+            position: absolute;
+            top: 30px;
+            right: -20px;
+            border: 10px solid transparent;
+            border-left-color: white;
+        }
+        
+        .judge-item:nth-child(even) .judge-content::after {
+            content: '';
+            position: absolute;
+            top: 30px;
+            left: -20px;
+            border: 10px solid transparent;
+            border-right-color: white;
+        }
+        
+        .judge-dot {
+            position: absolute;
+            top: 30px;
+            left: 50%;
+            width: 20px;
+            height: 20px;
+            background: white;
+            border: 4px solid #3498db;
+            border-radius: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+        }
+        
+        .judge-item:nth-child(even) .judge-dot {
+            border-color: #2ecc71;
+        }
+        
+        .judge-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .judge-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+            border: 3px solid #3498db;
+        }
+        
+        .judge-item:nth-child(even) .judge-image {
+            border-color: #2ecc71;
+        }
+        
+        .judge-name-title {
+            flex: 1;
+        }
+        
+        .judge-name {
+            font-size: 1.4rem;
+            margin: 0 0 5px 0;
+            color: #2c3e50;
+        }
+        
+        .judge-title {
+            font-size: 0.95rem;
+            color: #7f8c8d;
+            margin: 0;
+        }
+        
+        .judge-bio {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #34495e;
+            margin-bottom: 20px;
+        }
+        
+        .quote {
+            font-style: italic;
+            color: #3498db;
+            border-left: 3px solid #3498db;
+            padding-left: 15px;
+            margin: 20px 0;
+        }
+        
+        .judge-item:nth-child(even) .quote {
+            color: #2ecc71;
+            border-left-color: #2ecc71;
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .timeline-line {
+                left: 30px;
+            }
+            
+            .judge-item, 
+            .judge-item:nth-child(even) {
+                justify-content: flex-start;
+                padding-left: 60px;
+            }
+            
+            .judge-content {
+                width: calc(100% - 60px);
+            }
+            
+            .judge-dot {
+                left: 30px;
+            }
+            
+            .judge-item:nth-child(odd) .judge-content::after,
+            .judge-item:nth-child(even) .judge-content::after {
+                left: -20px;
+                right: auto;
+                border-right-color: white;
+                border-left-color: transparent;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .judge-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .judge-image {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+            
+            .judge-content {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Meet Our Distinguished Judges</h1>
+            <p class="subtitle">Our panel brings together cybersecurity leaders and UX design experts who understand that security doesn't have to come at the expense of usability.</p>
+        </header>
+        
+        <div class="judges-timeline">
+            <div class="timeline-line"></div>
+            
+            <!-- Judge 1 -->
+            <div class="judge-item">
+                <div class="judge-dot"></div>
+                <div class="judge-content">
+                    <div class="judge-header">
+                        <img src="/api/placeholder/400/400" alt="Rinki Sethi" class="judge-image">
+                        <div class="judge-name-title">
+                            <h3 class="judge-name">Rinki Sethi</h3>
+                            <p class="judge-title">VP & CISO at Fortune 500 Tech Company</p>
+                        </div>
+                    </div>
+                    <p class="judge-bio">A seasoned security executive with a passion for building secure products that users actually want to engage with. Rinki has held leadership positions at several major technology companies where she championed user-centric security approaches.</p>
+                    <p class="quote">"Security should be an enabler of great experiences, not a barrier to them."</p>
+                </div>
+            </div>
+            
+            <!-- Judge 2 -->
+            <div class="judge-item">
+                <div class="judge-dot"></div>
+                <div class="judge-content">
+                    <div class="judge-header">
+                        <img src="/api/placeholder/400/400" alt="Damian Hehir" class="judge-image">
+                        <div class="judge-name-title">
+                            <h3 class="judge-name">Damian Hehir</h3>
+                            <p class="judge-title">Director of Product Design, Cybersecurity Solutions</p>
+                        </div>
+                    </div>
+                    <p class="judge-bio">With over 15 years in security product design, Damian specializes in translating complex security requirements into intuitive user experiences. His award-winning designs have proven that security tools can be both powerful and a pleasure to use.</p>
+                    <p class="quote">"The best security is invisible yet empowering—it protects without frustrating."</p>
+                </div>
+            </div>
+            
+            <!-- Judge 3 -->
+            <div class="judge-item">
+                <div class="judge-dot"></div>
+                <div class="judge-content">
+                    <div class="judge-header">
+                        <img src="/api/placeholder/400/400" alt="Nick Selby" class="judge-image">
+                        <div class="judge-name-title">
+                            <h3 class="judge-name">Nick Selby</h3>
+                            <p class="judge-title">Chief Security Officer, Financial Services</p>
+                        </div>
+                    </div>
+                    <p class="judge-bio">Nick brings a practical, real-world perspective to security UX evaluation. Having implemented numerous security solutions across major financial institutions, he understands firsthand how usability directly impacts security effectiveness.</p>
+                    <p class="quote">"If security tools aren't used correctly—or worse, circumvented—they provide no security at all."</p>
+                </div>
+            </div>
+            
+            <!-- Judge 4 -->
+            <div class="judge-item">
+                <div class="judge-dot"></div>
+                <div class="judge-content">
+                    <div class="judge-header">
+                        <img src="/api/placeholder/400/400" alt="Patricia Morrison" class="judge-image">
+                        <div class="judge-name-title">
+                            <h3 class="judge-name">Patricia Morrison</h3>
+                            <p class="judge-title">Principal UX Researcher, Security Products</p>
+                        </div>
+                    </div>
+                    <p class="judge-bio">Patricia has conducted groundbreaking research on how users interact with security interfaces. Her methodologies for evaluating security UX have become industry standards, helping organizations create more effective and user-friendly security tools.</p>
+                    <p class="quote">"Security tools must work with human psychology, not against it."</p>
+                </div>
+            </div>
+            
+            <!-- Judge 5 -->
+            <div class="judge-item">
+                <div class="judge-dot"></div>
+                <div class="judge-content">
+                    <div class="judge-header">
+                        <img src="/api/placeholder/400/400" alt="Michael Chen" class="judge-image">
+                        <div class="judge-name-title">
+                            <h3 class="judge-name">Michael Chen</h3>
+                            <p class="judge-title">Cybersecurity Strategist & Industry Analyst</p>
+                        </div>
+                    </div>
+                    <p class="judge-bio">Michael has spent his career analyzing the cybersecurity market with a particular focus on user experience as a differentiator. His research has helped organizations understand the critical connection between UX excellence and security outcomes.</p>
+                    <p class="quote">"The most secure products are the ones people actually want to use."</p>
+                </div>
+            </div>
+            
+            <!-- Judge 6 -->
+            <div class="judge-item">
+                <div class="judge-dot"></div>
+                <div class="judge-content">
+                    <div class="judge-header">
+                        <img src="/api/placeholder/400/400" alt="Peter Kilpe" class="judge-image">
+                        <div class="judge-name-title">
+                            <h3 class="judge-name">Peter Kilpe</h3>
+                            <p class="judge-title">CEO, N2K Networks & Former UX Designer</p>
+                        </div>
+                    </div>
+                    <p class="judge-bio">Peter's unique background bridges the business and design worlds. From his early career as a UX designer to his current role leading a cybersecurity company, he brings valuable insights on how good design translates to business success in security.</p>
+                    <p class="quote">"UX isn't just about usability; it's a fundamental part of the engineering process."</p>
+                </div>
+            </div>
+            
+            <!-- Judge 7 -->
+            <div class="judge-item">
+                <div class="judge-dot"></div>
+                <div class="judge-content">
+                    <div class="judge-header">
+                        <img src="/api/placeholder/400/400" alt="Alicia Washington" class="judge-image">
+                        <div class="judge-name-title">
+                            <h3 class="judge-name">Alicia Washington</h3>
+                            <p class="judge-title">VP of Product, Enterprise Security Solutions</p>
+                        </div>
+                    </div>
+                    <p class="judge-bio">Alicia has redefined product strategy in the security space by centering user experience from the earliest stages of development. Her innovative approach has resulted in security products that achieve high protection standards while delighting users.</p>
+                    <p class="quote">"Security and usability aren't opposing forces—they're complementary strengths."</p>
+                </div>
+            </div>
+            
+            <!-- Judge 8 -->
+            <div class="judge-item">
+                <div class="judge-dot"></div>
+                <div class="judge-content">
+                    <div class="judge-header">
+                        <img src="/api/placeholder/400/400" alt="Meagan Torres" class="judge-image">
+                        <div class="judge-name-title">
+                            <h3 class="judge-name">Meagan Torres</h3>
+                            <p class="judge-title">UI/UX Director, Cybersecurity Innovations</p>
+                        </div>
+                    </div>
+                    <p class="judge-bio">Meagan's vision for beautiful, intuitive security interfaces has transformed how users perceive security tools. Her design leadership has proven that security products can be as visually appealing and user-friendly as any consumer application.</p>
+                    <p class="quote">"Great security UX should feel like a helpful companion, not an obstacle course."</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

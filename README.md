@@ -14,46 +14,134 @@ View the live demo at: [https://w4ester.github.io/judgeDemos/](https://w4ester.g
 4. **Version 4: Brand-Aligned Cards** - Custom cards with styling that closely matches the Cyber UXcellence brand colors and aesthetic.
 5. **Version 5: Hexagonal Grid** - Innovative hexagonal layout with interactive modals for detailed judge information.
 6. **Version 6: Official Brand Colors** - A modern card layout using the actual judges' information and official Cyber UXcellence brand colors.
-7. **Version 7: Spotlight Carousel** - A dynamic carousel showcasing judges with thumbnails below for quick navigation.
+7. **Version 7: Spotlight Carousel (Recommended)** - A dynamic carousel showcasing judges with thumbnails below for quick navigation. Features elegant animations and a modern, polished interface.
 
 ## Repository Structure
 
 - `index.html` - Main landing page with links to all design versions
 - `version1.html` through `version7.html` - Individual design options
 - `images/` - Directory containing preview images and judge photos
+- `download_judge_images.py` - Python script to download judge photos from Google Drive links
 
-## Local Setup
+## Setup Instructions
+
+### Local Setup
 
 To run this demo locally:
 
 1. Clone the repository:
 ```bash
 git clone https://github.com/w4ester/judgeDemos.git
+cd judgeDemos
 ```
 
-2. Open `index.html` in your web browser to view the main page.
+2. (Optional) Run the Python script to download judge photos:
+```bash
+# Make the script executable
+chmod +x download_judge_images.py
+# Run the script
+python3 download_judge_images.py
+```
 
-3. Click on any design card to view the specific design option.
+3. Open `index.html` in your web browser to view the main page.
+
+4. Click on any design card to view the specific design option.
+
+### Deployment with GitHub Pages
+
+1. Fork this repository to your own GitHub account
+
+2. Make sure your repository is set up for GitHub Pages:
+   - Go to your repository on GitHub
+   - Click on "Settings"
+   - Scroll down to the "GitHub Pages" section
+   - Under "Source", select "main" branch
+   - Click "Save"
+
+3. Your site will be published at `https://[your-username].github.io/judgeDemos/`
 
 ## Customization
 
-### Images
+### Judge Images
 
-For production use, replace the placeholder images with actual judge photos:
+The `download_judge_images.py` script attempts to download images from the provided Google Drive links. If it fails to download any images, you'll need to manually add judge photos to the `images/judges/` directory following this naming convention:
 
-1. Add judge photos to the `images/` directory
-2. Update the image paths in each HTML file to point to the actual photos
+- `ron-gula.jpg`
+- `troy-wilkinson.jpg`
+- `malcolm-harkins.jpg`
+- `rinki-sethi.jpg`
+- `damian-chung.jpg`
+- `nick-shevelyov.jpg`
+- `patricia-titus.jpg`
+- `michael-baker.jpg`
+- `peter-kilpe.jpg`
+- `alicia-lynch.jpg`
+- `meagan-petri.jpg`
 
-### Content
+### Preview Images
 
-The actual judge information is already included in Versions 6 and 7. Earlier versions use placeholder content that can be updated as needed.
+To replace the placeholder preview images for each design version:
 
-## Notes
+1. Take screenshots of each design version
+2. Save them to the `images/` directory as:
+   - `preview-version1.jpg`
+   - `preview-version2.jpg`
+   - `preview-version3.jpg`
+   - `preview-version4.jpg`
+   - `preview-version5.jpg`
+   - `preview-version6.jpg`
+   - `preview-version7.jpg`
 
-- All designs are fully responsive and should work well on mobile devices
-- JavaScript functionality is included where needed (for interactive elements)
-- All designs use custom CSS (no external frameworks)
+### Content Updates
 
-## Credits
+To update judge information, you'll need to modify the HTML files. Each design version has its own structure, but generally:
 
-Designed for the [Cyber UXcellence Awards](https://www.cyberuxcellence.com/)
+1. Find the section containing the judge information
+2. Update the name, title, company, and bio text as needed
+3. Save the file and refresh your browser to see the changes
+
+## Technical Details
+
+### Version 7 (Spotlight Carousel) Features
+
+The recommended "Spotlight Carousel" design (Version 7) includes:
+
+- Full-screen hero image with animated text
+- Dynamic carousel with smooth transitions
+- Staggered animation effects when switching judges
+- Responsive design for mobile, tablet, and desktop
+- Interactive thumbnail grid with hover effects
+- Auto-advancing carousel (every 5 seconds)
+- Manual navigation with buttons and indicators
+- Image hover effects and smooth transitions
+- Custom gradients and subtle background patterns
+
+### Browser Compatibility
+
+These designs have been tested and work well in:
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
+
+### Dependencies
+
+All designs use:
+- HTML5
+- CSS3 (with modern features like CSS Grid, Flexbox, and CSS Variables)
+- Vanilla JavaScript (no external libraries)
+- Google Fonts (Inter font family)
+
+## Acknowledgements
+
+- Design by [Your Name/Company]
+- Created for the [Cyber UXcellence Awards](https://www.cyberuxcellence.com)
+- Judges' information provided by the Cyber UXcellence Awards team
+
+## License
+
+This project is available for use by the Cyber UXcellence Awards team. All rights reserved.
+
+## Contact
+
+For questions or support, please contact [Your Contact Information].
