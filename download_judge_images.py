@@ -8,9 +8,9 @@ to the appropriate directory for use in the Cyber UXcellence Judges demo pages.
 
 import os
 import re
-import requests
 import sys
 from urllib.parse import urlparse, parse_qs
+from security import safe_requests
 
 # Directory to save the images
 IMAGES_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "images/judges")
@@ -77,7 +77,7 @@ def download_file(url, output_path):
     for approach in approaches:
         try:
             print(f"Trying to download with URL: {approach['url']}")
-            response = requests.get(approach['url'], headers=approach['headers'], stream=True)
+            response = safe_requests.get(approach['url'], headers=approach['headers'], stream=True)
             
             # Check if the response is valid
             if response.status_code == 200 and int(response.headers.get('Content-Length', 0)) > 1000:
